@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+.game{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.field{
+    width: calc(90vw * .8 + 2px);
+    background: #eee;
+    height: calc(90vw * .8 + 2px);
+    border: 1px solid #999;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.item{
+    float: left;
+    width: calc(30vw*.8 - 4px);
+    height: calc(30vw*.8 - 4px);
+    line-height: calc(30vw*.8 - 4px);
+    font-size: calc(30vw*.5);
+    text-align: center;
+    margin: 2px;
+    border: 1px solid #999;
+}
+
+
+
+.item:hover{
+    background: rgba(0,0,0,.5);
+}
+
+
+.w100{
+    width: 100%; float: left; border-bottom: 1px solid #ccc;
+}
+
+.name{
+    float: left;
+    padding: 5px;
+}
+.punkte{
+    float: right;
+    padding: 5px;
+}

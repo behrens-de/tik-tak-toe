@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTakToe</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <h1>TikTakToe</h1>
+
+
+
+    <div class="game">
+
+        <div class="field">
+            <div class="item" data-column="0" data-row="0"></div>
+            <div class="item" data-column="0" data-row="1"></div>
+            <div class="item" data-column="0" data-row="2"></div>
+
+            <div class="item" data-column="1" data-row="0"></div>
+            <div class="item" data-column="1" data-row="1"></div>
+            <div class="item" data-column="1" data-row="2"></div>
+
+            <div class="item" data-column="2" data-row="0"></div>
+            <div class="item" data-column="2" data-row="1"></div>
+            <div class="item" data-column="2" data-row="2"></div>
+
+
+        </div>
+    </div>
+
+    <button class="newGame">Neues Spiel</button>
+
+
+    <div class="w100">
+
+    <div style="float: left;">Name</div>
+    <div style="float: right;">Punkte</div>
+
+</div>
+    <div class="spieler1 w100">
+        <div class="name"></div>
+        <div class="punkte"></div>
+    </div>
+
+    <div class="spieler2 w100">
+        <div class="name"></div>
+        <div class="punkte"></div>
+    </div>
+
+    <div class="spieler"></div>
+    <div class="status"></div>
+
+    <script src="./js/game.js"></script>
+    <script src="./js/control.js"></script>
+</body>
+
+</html>
