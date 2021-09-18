@@ -13,11 +13,11 @@ function clickItem(item) {
     if (Player[game._currenPlayer].setField(this.dataset.row, this.dataset.column)) {
         // Wenn Feld anklickbar
 
-
-        const statusTxt = () =>{
-            if(game._winner){
+        console.log(game._winner);
+        const statusTxt = () => {
+            if (game._winner) {
                 return 'Spiel wurde gewonnen';
-            } else if(game._noWinner){
+            } else if (game._noWinner) {
                 return 'unenschieden';
             } else {
                 return `${Player[game._currenPlayer].name} ist am Zug!`;
@@ -29,7 +29,7 @@ function clickItem(item) {
 
 
         this.innerHTML = Player[game._currenPlayer].figur;
-        console.log(game._field);
+        // console.log(game._field);
 
     } else {
         // Wenn Feld schon besetzt
@@ -45,7 +45,7 @@ const appPlayerOneName = appPlayerOne.querySelector('.name');
 const appPlayerOnePoints = appPlayerOne.querySelector('.punkte');
 
 appPlayerOneName.innerHTML = Player[0].name;
-appPlayerOnePoints.innerHTML = 0;
+appPlayerOnePoints.innerHTML = Player[0].name;
 
 
 const appPlayerTow = document.querySelector('.spieler2');

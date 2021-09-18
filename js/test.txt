@@ -1,0 +1,22 @@
+|- GAME -----------------|
+|------------------------|
+| + Spielfeld (3x3)
+| + Status (Gewonnen|Unenschieden|Noch nicht beendet)
+| + Züge = 0;
+|------------------------|
+| _status prüfen // _wurde gewonnen >> setze 0
+| _status setzen // 0 = noch nicht beendet: 1= Unenschieden | 2 = Gewonnen
+| _wurde gewonnen // Wenn eine Reihe, Spalte oder Diagonale von nur einer figur besetzt ist
+| _unentschieden // Wenn alle Felder belegt sind 
+
+
+
+|- PLAYER -----------------|
+|------------------------|
+| + Name
+| + Figur
+| + Punkte
+|------------------------|
+| _feld setzen
+
+

@@ -38,7 +38,7 @@ class Gamer {
 
             // Prüffen ob Spiel gewonnen
             if (this.checkWin()) {
-                //console.log('Gewonnen');
+                console.log('Gewonnen');
                 game._winner = true;
             } else {
                 //console.log('Nocht gewonnen');
