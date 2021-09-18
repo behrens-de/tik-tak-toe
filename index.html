@@ -13,20 +13,23 @@
 
     <h1>TikTakToe</h1>
 
-
     <div id="gamer">
-        <div class="detail">
+
+        <div class="detail" id="gamer1">
             <div class="name">Spieler 1</div>
             <div class="points">0</div>
         </div>
+        
         <div class="vs">VS.</div>
-        <div class="detail">
+
+        <div class="detail" id="gamer2">
             <div class="name">Spieler 2</div>
             <div class="points">0</div>
         </div>
+
     </div>
 
-
+    <div class="status"></div>
 
     <div class="game">
 
@@ -42,34 +45,16 @@
             <div class="item" data-column="0" data-row="2"></div>
             <div class="item" data-column="1" data-row="2"></div>
             <div class="item" data-column="2" data-row="2"></div>
-
-
         </div>
+
+    </div>
+    <div class="center">
+        <button class="newGame">Neues Spiel</button>
     </div>
 
-    <button class="newGame">Neues Spiel</button>
-
-    <div class="status"></div>
 
 
-    <div class="w100">
 
-    <div style="float: left;">Name</div>
-    <div style="float: right;">Punkte</div>
-
-</div>
-    <div class="spieler1 w100">
-        <div class="name"></div>
-        <div class="punkte"></div>
-    </div>
-
-    <div class="spieler2 w100">
-        <div class="name"></div>
-        <div class="punkte"></div>
-    </div>
-
-    <div class="spieler"></div>
-    <div class="status"></div>
 
     <script src="./js/_Game.js"></script>
     <script src="./js/_Player.js"></script>

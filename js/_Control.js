@@ -12,8 +12,7 @@ const player = [
 const items = document.querySelectorAll('.item');
 items.forEach(item => item.addEventListener('click', clickItem));
 function clickItem(item) {
-
-    
+    // Wenn Spiel nicht zuende ist 
     if (!game._end) {
         const status = document.querySelector('.status');
 
@@ -65,33 +64,25 @@ function newGame() {
 
 
 function displayPlayer() {
-    const appPlayerOne = document.querySelector('.spieler1');
-    const appPlayerOneName = appPlayerOne.querySelector('.name');
-    const appPlayerOnePoints = appPlayerOne.querySelector('.punkte');
+ 
+    // document.querySelector('#gamer1 .name').innerHTML = player[0].name;
+    // document.querySelector(' #gamer1.punkte').innerHTML = player[0].points;
 
-    appPlayerOneName.innerHTML = player[0].name;
-    appPlayerOnePoints.innerHTML = player[0].points;
+    // document.querySelector('#gamer2 .name').innerHTML = player[1].name;
+    // document.querySelector('#gamer2 .punkte').innerHTML = player[1].points;
 
+    console.log('PLAYER');
+    console.log(player[0].name);
+    console.log(player[1].name);
 
-    const appPlayerTow = document.querySelector('.spieler2');
-    const appPlayerTowName = appPlayerTow.querySelector('.name');
-    const appPlayerTowPoints = appPlayerTow.querySelector('.punkte');
+    document.querySelector('#gamer1 .name').innerHTML = player[0].name;
+    document.querySelector('#gamer1 .points').innerHTML = player[0].points;
+    document.querySelector("#gamer2 .name").innerHTML = player[1].name;
+    document.querySelector("#gamer2 .points").innerHTML = player[1].points;
 
-    appPlayerTowName.innerHTML = player[1].name;
-    appPlayerTowPoints.innerHTML = player[1].points;
 }
 
+document.querySelector('.status').innerHTML = player[0].name+' ist am zug!';
 
 displayPlayer();
-
-
-// console.log(player[0].setField(0, 0));
-// console.log(game._field);
-// console.log(player[0].setField(0, 0));
-// console.log(game._field);
-// console.log(player[0].setField(1, 0));
-// console.log(game._field);
-// console.log(player[0].setField(0, 0));
-// console.log(game._field);
-
 
