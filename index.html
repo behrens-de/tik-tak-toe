@@ -9,50 +9,132 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body>
+<body class="bg-1">
+    <div id="tttSettings" class="noDisplay">
+        
 
-    <h1>TikTakToe</h1>
+        <h1>Settings</h1>
+        <h2>Spieler:</h2>
+        <h3>Spiler 1</h3>
+        <h4>Name</h4>
+        <div class="w100 w100flex">
+            <input type="text" class="ply1Name" value="Mr. WebDev">
+        </div>
+        <h4>Figur</h4>
+        <div class="w100" id="figPlayer1">
+            <div class="w100 cc">
+                <span class="myfig" data-fid="0">🙅🏻‍♀️</span>
+                <span class="myfig" data-fid="1">🙅🏼‍♀️</span>
+                <span class="myfig" data-fid="2">🙅🏽‍♀️</span>
+                <span class="myfig" data-fid="3">🙅🏾‍♀️</span>
+            </div>
+            <div class="w100 cc">
+                <span class="myfig" data-fid="4">🙅🏻‍♂️</span>
+                <span class="myfig" data-fid="5">🙅🏼‍♂️</span>
+                <span class="myfig" data-fid="6">🙅🏽‍♂️</span>
+                <span class="myfig" data-fid="7">🙅🏾‍♂️</span>
+            </div>
+        </div>
 
-    <div id="gamer">
 
-        <div class="detail" id="gamer1">
-            <div class="name">Spieler 1</div>
-            <div class="points">0</div>
+        <h3>Spiler 2</h3>
+        <div class="robot">
+            <label for="mrBot">
+                <input type="checkbox" id="mrBot">
+                🤖 Spielen gegen Coputer?
+            </label>
+        </div>
+        <div class="w100 w100flex">
+            <input type="text" class="ply2Name" value="Mr. GameBot">
+        </div>
+        <div class="w100" id="figPlayer2">
+            <div class="w100 cc">
+                <span class="myfig" data-fid="8">🙆🏻‍♀️</span>
+                <span class="myfig" data-fid="9">🙆🏼‍♀️</span>
+                <span class="myfig" data-fid="10">🙆🏽‍♀️</span>
+                <span class="myfig" data-fid="11">🙆🏾‍♀️</span>
+            </div>
+            <div class="w100 cc">
+                <span class="myfig" data-fid="12">🙆🏻‍♂️</span>
+                <span class="myfig" data-fid="13">🙆🏼‍♂️</span>
+                <span class="myfig" data-fid="14">🙆🏽‍♂️</span>
+                <span class="myfig" data-fid="15">🙆🏾‍♂️</span>
+            </div>
+
+
+        </div>
+
+
+
+
+        <h2>Farbe:</h2>
+        <div class="w100" id="bgColor">
+            <span class="myfig bg-1 selectedFigur" data-bgc="bg-1"></span>
+            <span class="myfig bg-2" data-bgc="bg-2"></span>
+            <span class="myfig bg-3" data-bgc="bg-3"></span>
+            <span class="myfig bg-4" data-bgc="bg-4"></span>
+            <span class="myfig bg-5" data-bgc="bg-5"></span>
+            <span class="myfig bg-6" data-bgc="bg-6"></span>
+        </div>
+
+        <div id="updateSettings">
+            <button class="goGame">Abbrechen</button>
+            <button id="saveUpdate">Änderungen Speichern</button>
+        </div>
+
+
+    </div>
+
+
+
+
+    <div id="tttGame">
+        <h1>TikTakToe</h1>
+        <div id="gamer">
+
+            <div class="detail" id="gamer1">
+                <div class="figur">x</div>
+                <div class="name">x</div>
+                <div class="points">x</div>
+            </div>
+
+            <div class="vs">VS.</div>
+
+            <div class="detail" id="gamer2">
+                <div class="figur">x</div>
+                <div class="name">x</div>
+                <div class="points">x</div>
+            </div>
+
+        </div>
+
+        <div class="status"></div>
+
+        <div class="game">
+
+            <div class="field">
+                <div class="item" data-column="0" data-row="0"></div>
+                <div class="item" data-column="1" data-row="0"></div>
+                <div class="item" data-column="2" data-row="0"></div>
+
+                <div class="item" data-column="0" data-row="1"></div>
+                <div class="item" data-column="1" data-row="1"></div>
+                <div class="item" data-column="2" data-row="1"></div>
+
+                <div class="item" data-column="0" data-row="2"></div>
+                <div class="item" data-column="1" data-row="2"></div>
+                <div class="item" data-column="2" data-row="2"></div>
+            </div>
+
+        </div>
+        <div class="center">
+            <button class="newGame">Neues Spiel</button>
+            <div class="goSettings">&raquo; Einsetllungen &laquo;</div>
         </div>
         
-        <div class="vs">VS.</div>
 
-        <div class="detail" id="gamer2">
-            <div class="name">Spieler 2</div>
-            <div class="points">0</div>
-        </div>
 
     </div>
-
-    <div class="status"></div>
-
-    <div class="game">
-
-        <div class="field">
-            <div class="item" data-column="0" data-row="0"></div>
-            <div class="item" data-column="1" data-row="0"></div>
-            <div class="item" data-column="2" data-row="0"></div>
-
-            <div class="item" data-column="0" data-row="1"></div>
-            <div class="item" data-column="1" data-row="1"></div>
-            <div class="item" data-column="2" data-row="1"></div>
-
-            <div class="item" data-column="0" data-row="2"></div>
-            <div class="item" data-column="1" data-row="2"></div>
-            <div class="item" data-column="2" data-row="2"></div>
-        </div>
-
-    </div>
-    <div class="center">
-        <button class="newGame">Neues Spiel</button>
-    </div>
-
-
 
 
 

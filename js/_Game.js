@@ -51,11 +51,18 @@ class Game {
 
         return cross1 || cross2 || row1 || row2 || row3 || column1 || column2 || column3;
     }
+    checkNoWin() {
+        return this._moves > 8 ? true : false;
+    }
+    getPoints() {
+        let points = 1;
+        for (let i = 0; i < 3; i++) {
+            for (let y = 0; y < 3; y++) {
+                if (this._field[i][y] === "") {
+                    points++;
+                }
+            }
+        }
+        return points;
+    }
 }
-
-
-
-
-
-
-

@@ -1,9 +1,10 @@
 class Player {
-    constructor(name, figur, points, game) {
+    constructor(name, figur, points, game, bot = false) {
         this.name = name ?? 'Unbekannt';
         this.figur = figur ?? '+';
         this.points = points ?? 0;
         this.game = game;
+        this.bot = bot;
     }
 
     setField(row, column) {
