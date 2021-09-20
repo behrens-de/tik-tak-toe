@@ -1,8 +1,9 @@
 class Render {
 
-    constructor(gamefield, target = '#app') {
+    constructor(player,gamefield, target = '#app') {
         this.gamefield = gamefield;
         this.target = target;
+        this.plya = player;
     }
     // Erzeugt die Headline
     title({ text = 'Test' }) {
@@ -23,9 +24,9 @@ class Render {
         vs.appendChild(document.createTextNode('vs'));
         vs.className = 'vs';
 
-        playerBox.appendChild(this.player({}));
+        playerBox.appendChild(this.player({ playerName: this.plya[0].name,playerFigur:this.plya[0].figur}));
         playerBox.appendChild(vs);
-        playerBox.appendChild(this.player({ playerName: 'max', className: 'playerTow' }));
+        playerBox.appendChild(this.player({ playerName: this.plya[1].name, playerFigur:this.plya[1].figur, className: 'playerTow' }));
 
         wrap.appendChild(playerBox);
 

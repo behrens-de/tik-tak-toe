@@ -7,33 +7,22 @@ import { Render } from './Render.js';
 // Inizialisiere Klassen
 const _Game = new Game('Tik Tak Toe');
 const _Gamefield = new Gamefield();
-const _Render = new Render(_Gamefield, '#app');
 const _Player = [new Player({ name: 'JP WebDev', figur: '👨🏻‍💻' }), new Player({ name: 'Max B.', figur: '👨🏻' })];
-
-
-
-
-// console.log('test');
-// _Gamefield.reset();
-// console.log(_Gamefield.items.free);
-// console.log(_Gamefield.items.notfree);
+const _Render = new Render(_Player, _Gamefield, '#app');
 
 _Render.game();
 
 
-// Element wird geklickt
+// Item wird geklickt
 const btns = document.querySelectorAll('.game-field-item');
 btns.forEach((b) => {
     b.addEventListener('click', clickField);
 });
 
 function clickField() {
-
     // Prüfe ob das Feld setzbar ist 
     const freeItems = _Gamefield.items.free;
-
     let isFree = false;
-
     freeItems.forEach(item => {
         if (item.row === Number(this.dataset.row) && item.column === Number(this.dataset.column)) {
             isFree = true;
@@ -55,22 +44,23 @@ function clickField() {
             _Game.moves++;
 
 
-            const winning = _Game.checkWin(_Gamefield, figur);
-
             // Wenn ein Spieler gewonnen hat
+            const winning = _Game.checkWin(_Gamefield, figur);
             if (winning) {
                 display({
                     msg: `${name} hat die Rund gewonnen`
                 });
                 _Game.done = true;
+                // TODO: Punkte dem gewinner zuschreiben
             }
 
+            // Wenn Spiel unentschieden
             const noWinner = _Game.checkNoWin(_Gamefield);
-            if(noWinner){
+            if (noWinner) {
                 display({
                     msg: `Diese Runde ist leider unentschienden`
                 });
-                _Game.done = true;  
+                _Game.done = true;
             }
 
 
@@ -85,8 +75,8 @@ function clickField() {
                 this.classList.remove('game-field-item_error');
             }, 1000);
             display({
-                msg: 
-                'Dieses Feld ist schon belegt',
+                msg:
+                    'Dieses Feld ist schon belegt',
                 className: 'error'
             });
         }
@@ -105,7 +95,7 @@ const resetButton = document.querySelector('.game-field-reset-btn');
 if (resetButton) {
     resetButton.addEventListener('click', resetField);
 }
-
+// Bereinigt das Spielfeld
 function resetField() {
     _Gamefield.reset();
     _Render.clear({});
@@ -116,13 +106,8 @@ function resetField() {
     console.log(_Gamefield._items);
 }
 
-
-
-
-
+// Zeigt den Status an 
 function display({ msg = '', timeout = 1500, className = 'info' }) {
-
-
     const display = document.querySelector('.infobox');
     if (display) {
         display.innerHTML = `<span class="${className}">${msg}</span>`;

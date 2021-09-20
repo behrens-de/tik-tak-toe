@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: monospace;
     background-color: #e5e5f7;
     opacity: 1;
     background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 4px), repeating-linear-gradient( #f0f0f055, #f0f0f0);
@@ -24,6 +25,14 @@ APP
     width: var(--appWidth);
 }
 
+h1{
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom:2.75rem;
+}
+
 /*
 Spieler
 */
@@ -38,7 +47,6 @@ Spieler
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background: rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
@@ -48,7 +56,21 @@ Spieler
     justify-content: center;
     align-items: center;
     width: 38%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, .7);
+    border-radius: .5rem;
+}
+
+.figur{
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.6rem;
+    margin-top: -1.2rem;
+    text-align: center;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
 }
 
 .vs{
@@ -56,6 +78,12 @@ Spieler
     flex-direction: column;
     justify-content: center;
     align-items: center;   
+}
+.name{
+    padding: .5rem 0 .25rem 0;
+}
+.points{
+    padding: 0 0 .5rem 0;
 }
 
 .points:after{
@@ -92,6 +120,11 @@ Spielfeld
 
 .game-field-item_error {
     background: rgb(254, 168, 168);
+    transform: scale(1.1);
+    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), 
+    inset -2px 2px 2px rgba(0, 0, 0, 0.1),
+    2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(164, 105, 105);
 }
 
 .game-field-reset-btn {
@@ -138,10 +171,12 @@ INFOBOX
     padding: 5px 12px;
     max-width: 80vw;
     border-radius: 3px;
-    background: rgb(255, 208, 208);
-    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), inset -2px 2px 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgb(116, 66, 66);
-    color: rgb(81, 43, 43);
+    background: rgb(255, 218, 218);
+    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), 
+    inset -2px 2px 2px rgba(0, 0, 0, 0.1),
+    2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(164, 105, 105);
+    color: rgb(130, 79, 79);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
     transition: all 500ms;
 }

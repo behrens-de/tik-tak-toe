@@ -1,7 +1,6 @@
 class Gamefield {
 
     constructor() { }
-
     _items = [["", "", ""], ["", "", ""], ["", "", ""]];
     _field = {
         columns: 3,
