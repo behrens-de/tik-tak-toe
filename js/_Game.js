@@ -14,6 +14,20 @@ class Game {
         this._end = false;
     }
 
+    freeFields(){
+        const fields = new Array();
+        for(let i = 0; i<3; i++){
+            for(let j = 0; j<3; j++){
+
+                if(this._field[i][j] === ''){
+                    fields.push({i,j});
+                }
+            }
+        }
+        return fields;
+
+    }
+
     checkWin(figur) {
 
 

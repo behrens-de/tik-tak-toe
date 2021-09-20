@@ -1,7 +1,6 @@
-console.log('Start Game:');
-
+// Instans des Spiels
 const game = new Game();
-
+// Erzeugen der Spieler
 const player = [
     new Player('Mr. WebDev', '🙅🏻‍♂️', 0, game),
     new Player('Mr. GameBot', '🤖', 0, game, false)
@@ -10,7 +9,6 @@ const player = [
 
 // Erzeigt eine zufallszahl (0, 1 oder 2)
 function getRandomInt(max) {
-    // TODO: Random der noch verfügbaren felder und nicht ein gerelles Random
     return Math.floor(Math.random() * max);
 }
 
@@ -66,6 +64,10 @@ function clickItem() {
 
         // Wenn spielfeld gesetzt werden kann
         if (player[game._currenPlayer].setField(this.dataset.row, this.dataset.column)) {
+
+
+            
+
 
             this.innerHTML = figur;// Setzt die Firgur ins Frontend
             game._moves++; // eröht die züge um eins
@@ -261,3 +263,10 @@ function renamePlayer(inputSelector, playerNr) {
 
 renamePlayer('.ply1Name', 0);
 renamePlayer('.ply2Name', 1);
+
+
+
+const demo = {};
+
+demo.name = 123;
+demo.lang = 'de';

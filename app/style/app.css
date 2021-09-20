@@ -1,0 +1,34 @@
+:root{
+    --fieldSize: 300px;
+    --itemSize: 98px;
+    --appWidth: 100%;
+}
+
+/*
+Spielfeld
+*/
+#app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--appWidth);
+}
+
+/*
+Spielfeld
+*/
+.game-field{
+    border: 1px solid #000;
+    width: var(--fieldSize);
+    height: var(--fieldSize);
+}
+.game-field-item{
+    border: 1px solid #000;
+    width: var(--itemSize);
+    height: var(--itemSize);
+    line-height: var(--itemSize);
+    font-size: calc(var(--itemSize)*.45);
+    text-align: center;
+    float: left;
+}
