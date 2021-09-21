@@ -77,6 +77,8 @@ class Render {
                 item.className = itemClass;
                 item.dataset.column = col;
                 item.dataset.row = row;
+                const ff = this.gamefield._items[col][row] || '';
+                item.appendChild(document.createTextNode(ff));
                 field.appendChild(item);
             }
         }
@@ -94,25 +96,7 @@ class Render {
         button.appendChild(document.createTextNode(text));
         document.querySelector(this.target).appendChild(button);
     }
-    game() {
-        this.title({
-            text: "Tic Tac Toe Game"
-        });
-        this.playerbox({});
-        this.info({});
-        // Rendert das Spielfeld
-        this.field({
-            targetSelector: '#app',
-            fieldClass: 'game-field',
-            itemClass: 'game-field-item'
-        });
-        // Rendert  den zurück setzen Button
-        this.reset({
-            text: 'zurücksetzen'
-        });
-    }
     // START SETTING OPTIONS
-
     playerOne({ id = 0, figuren = ['🙅🏻‍♀️', '🙅🏼‍♀️', '🙅🏽‍♀️', '🙅🏾‍♀️', '🙅🏻‍♂️', '🙅🏼‍♂️', '🙅🏽‍♂️', '🙅🏾‍♂️'] }) {
 
         const headline = document.createElement('h2');
@@ -155,12 +139,38 @@ class Render {
        
 
     }
-
+    // Erstellt ein HR element
     seperator(){
         const hr = document.createElement('hr');
         document.querySelector(this.target).appendChild(hr);
     }
-
+    // Erstellt ein Button
+    cbutton({bid='ex', text="button"}){
+        const button = document.createElement('button');
+        button.id = bid;
+        button.appendChild(document.createTextNode(text));
+        document.querySelector(this.target).appendChild(button);
+    }
+    // rendert das spiel
+    game() {
+        this.title({
+            text: "Tic Tac Toe Game"
+        });
+        this.playerbox({});
+        this.info({});
+        // Rendert das Spielfeld
+        this.field({
+            targetSelector: '#app',
+            fieldClass: 'game-field',
+            itemClass: 'game-field-item'
+        });
+        // Rendert  den zurück setzen Button
+        this.reset({
+            text: 'zurücksetzen'
+        });
+        this.cbutton({text:'Einstellungen',bid:"go2settings"});
+    }
+    // Rendert die einstellungen
     settings() {
         this.title({
             text: "Settings:"
@@ -168,6 +178,7 @@ class Render {
         this.playerOne({ id: 0 });
         this.seperator();
         this.playerOne({ id: 1, figuren : ['🙆🏻‍♀️', '🙆🏼‍♀️', '🙆🏽‍♀️', '🙆🏾‍♀️', '🙆🏻‍♂️', '🙆🏼‍♂️', '🙆🏽‍♂️', '🙆🏾‍♂️'] });
+        this.cbutton({text:'Zurück zum Spiel',bid:"back2game"});
 
     }
 }
