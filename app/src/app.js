@@ -7,11 +7,17 @@ import { Render } from './Render.js';
 // Inizialisiere Klassen
 const _Game = new Game('Tik Tak Toe');
 const _Gamefield = new Gamefield();
-const _Player = [new Player({ name: 'JP WebDev', figur: '👨🏻‍💻' }), new Player({ name: 'Max B.', figur: '👨🏻' })];
+const _Player = [
+    new Player({ name: 'JP WebDev', figur: '🙅🏾‍♀️' }),
+    new Player({ name: 'Max B.', figur: '🙆🏻‍♀️' })
+];
 const _Render = new Render(_Player, _Gamefield, '#app');
 
-_Render.game();
+// Das spiel wird gerendert
+//_Render.game();
 
+// Die einstellungen werden gerendert
+_Render.settings();
 
 // Item wird geklickt
 const btns = document.querySelectorAll('.game-field-item');
@@ -116,3 +122,27 @@ function display({ msg = '', timeout = 1500, className = 'info' }) {
         }, timeout);
     }
 }
+
+
+
+
+
+function selectFigur(id) {
+
+    const fItem = document.querySelectorAll(id+' .setFigur');
+
+    if (fItem) {
+        fItem.forEach(item => {
+            item.addEventListener('click', changeFigur);
+        });
+    }
+    function changeFigur() {
+        const activeClass = 'setFigur-active';
+        fItem.forEach(item => item.classList.remove(activeClass));
+        console.log(this.innerText);
+        this.classList.add(activeClass);
+    }
+}
+
+selectFigur('#setFigurWrap_0');
+selectFigur('#setFigurWrap_1');

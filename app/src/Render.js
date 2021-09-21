@@ -1,6 +1,6 @@
 class Render {
 
-    constructor(player,gamefield, target = '#app') {
+    constructor(player, gamefield, target = '#app') {
         this.gamefield = gamefield;
         this.target = target;
         this.plya = player;
@@ -24,9 +24,9 @@ class Render {
         vs.appendChild(document.createTextNode('vs'));
         vs.className = 'vs';
 
-        playerBox.appendChild(this.player({ playerName: this.plya[0].name,playerFigur:this.plya[0].figur}));
+        playerBox.appendChild(this.player({ playerName: this.plya[0].name, playerFigur: this.plya[0].figur }));
         playerBox.appendChild(vs);
-        playerBox.appendChild(this.player({ playerName: this.plya[1].name, playerFigur:this.plya[1].figur, className: 'playerTow' }));
+        playerBox.appendChild(this.player({ playerName: this.plya[1].name, playerFigur: this.plya[1].figur, className: 'playerTow' }));
 
         wrap.appendChild(playerBox);
 
@@ -110,6 +110,65 @@ class Render {
         this.reset({
             text: 'zurücksetzen'
         });
+    }
+    // START SETTING OPTIONS
+
+    playerOne({ id = 0, figuren = ['🙅🏻‍♀️', '🙅🏼‍♀️', '🙅🏽‍♀️', '🙅🏾‍♀️', '🙅🏻‍♂️', '🙅🏼‍♂️', '🙅🏽‍♂️', '🙅🏾‍♂️'] }) {
+
+        const headline = document.createElement('h2');
+        headline.appendChild(document.createTextNode(`Spieler ${id + 1}`));
+
+        const label = document.createElement('label');
+        label.appendChild(document.createTextNode('Name:'));
+
+        const input = document.createElement('input');
+        input.value = this.plya[id].name;
+
+        const inputLabel = document.createElement('div');
+        inputLabel.className = 'inla';
+        
+
+        inputLabel.appendChild(label);
+        inputLabel.appendChild(input);
+
+        const figurBox = document.createElement('div');
+        figurBox.className = 'setFigurWrap';
+        figurBox.id = 'setFigurWrap_'+id;
+
+
+        figuren.forEach((fig) => {
+            const figur = document.createElement('div');
+            if (fig === this.plya[id].figur) {
+                figur.className = 'setFigur setFigur-active';
+            } else {
+                figur.className = 'setFigur';
+            }
+
+            figur.appendChild(document.createTextNode(fig));
+            figurBox.appendChild(figur);
+        });
+
+
+        document.querySelector(this.target).appendChild(headline);
+        document.querySelector(this.target).appendChild(inputLabel);
+        document.querySelector(this.target).appendChild(figurBox);
+       
+
+    }
+
+    seperator(){
+        const hr = document.createElement('hr');
+        document.querySelector(this.target).appendChild(hr);
+    }
+
+    settings() {
+        this.title({
+            text: "Settings:"
+        });
+        this.playerOne({ id: 0 });
+        this.seperator();
+        this.playerOne({ id: 1, figuren : ['🙆🏻‍♀️', '🙆🏼‍♀️', '🙆🏽‍♀️', '🙆🏾‍♀️', '🙆🏻‍♂️', '🙆🏼‍♂️', '🙆🏽‍♂️', '🙆🏾‍♂️'] });
+
     }
 }
 export { Render };

@@ -30,9 +30,17 @@ h1{
     padding: 0;
     font-weight: 100;
     color: rgba(0, 0, 0, 0.4);
-    margin-bottom:2.75rem;
+    margin:.6rem;
 }
 
+h2{
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.6);
+    margin: .9rem 0;
+
+}
 /*
 Spieler
 */
@@ -179,4 +187,69 @@ INFOBOX
     color: rgb(130, 79, 79);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
     transition: all 500ms;
+}
+
+
+/*
+Settings
+*/
+
+
+.inla{
+    width: 230px;
+    background: rgba(255, 255, 255, .7);
+    margin: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.inla label{
+    box-sizing: border-box;
+    width: 60px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.65);
+}
+.inla input{
+    box-sizing: border-box;
+    width: 170px;
+    padding: 0 8px;
+    float: left;
+    line-height: 28px;
+    font-family: monospace;
+font-size: .8rem;
+outline: none;
+    border: none;
+}
+
+.setFigurWrap{
+    width: 240px;
+    margin: .8rem auto;
+    
+}
+.setFigur{
+    box-sizing: border-box;
+    width: 50px; height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, .5);
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    float: left;
+}
+
+.setFigur-active{
+    border: 3px solid rgb(70, 70, 70);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    width: 55px; height: 55px;
+    margin: 2.5px;
+    line-height: 55px;
+    background: #fff;
+    font-size: 40px;
+}
+
+hr{
+    width: 100%;
+    border: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
 }
