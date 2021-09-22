@@ -25,41 +25,44 @@ APP
     width: var(--appWidth);
 }
 
-h1{
+h1 {
     margin: 0;
     padding: 0;
     font-weight: 100;
     color: rgba(0, 0, 0, 0.4);
-    margin:.6rem;
+    margin: .6rem;
 }
 
-h2{
+h2 {
     margin: 0;
     padding: 0;
     font-weight: 100;
     color: rgba(0, 0, 0, 0.6);
     margin: .9rem 0;
-
 }
+
 /*
 Spieler
 */
-.player{
-    display: flex;   
+
+.player {
+    display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100%;
     width: 500px;
 }
+
 .playerBox {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
     margin-top: 1.5rem;
+    background-size: cover;
 }
 
-.playerOne,.playerTow{
+.playerOne, .playerTow {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,7 +72,7 @@ Spieler
     border-radius: .5rem;
 }
 
-.figur{
+.figur {
     width: 2.5rem;
     height: 2.5rem;
     line-height: 2.5rem;
@@ -82,20 +85,22 @@ Spieler
     border-radius: 50%;
 }
 
-.vs{
+.vs {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
 }
-.name{
+
+.name {
     padding: .5rem 0 .25rem 0;
 }
-.points{
+
+.points {
     padding: 0 0 .5rem 0;
 }
 
-.points:after{
+.points:after {
     font-size: 70%;
     opacity: .7;
     padding-left: 5px;
@@ -130,9 +135,7 @@ Spielfeld
 .game-field-item_error {
     background: rgb(254, 168, 168);
     transform: scale(1.1);
-    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), 
-    inset -2px 2px 2px rgba(0, 0, 0, 0.1),
-    2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), inset -2px 2px 2px rgba(0, 0, 0, 0.1), 2px 2px 5px rgba(0, 0, 0, 0.3);
     border: 1px solid rgb(164, 105, 105);
 }
 
@@ -181,28 +184,25 @@ INFOBOX
     max-width: 80vw;
     border-radius: 3px;
     background: rgb(255, 218, 218);
-    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), 
-    inset -2px 2px 2px rgba(0, 0, 0, 0.1),
-    2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.7), inset -2px 2px 2px rgba(0, 0, 0, 0.1), 2px 2px 5px rgba(0, 0, 0, 0.3);
     border: 1px solid rgb(164, 105, 105);
     color: rgb(130, 79, 79);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
     transition: all 500ms;
 }
 
-
 /*
 Settings
 */
 
-
-.inla{
+.inla {
     width: 230px;
     background: rgba(255, 255, 255, .7);
     margin: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.inla label{
+
+.inla label {
     box-sizing: border-box;
     width: 60px;
     float: left;
@@ -210,26 +210,28 @@ Settings
     text-align: center;
     color: rgba(0, 0, 0, 0.65);
 }
-.inla input{
+
+.inla input {
     box-sizing: border-box;
     width: 170px;
     padding: 0 8px;
     float: left;
     line-height: 28px;
     font-family: monospace;
-font-size: .8rem;
-outline: none;
+    font-size: .8rem;
+    outline: none;
     border: none;
 }
 
-.setFigurWrap{
+.setFigurWrap {
     width: 240px;
     margin: .8rem auto;
-    
 }
-.setFigur{
+
+.setFigur {
     box-sizing: border-box;
-    width: 50px; height: 50px;
+    width: 50px;
+    height: 50px;
     margin: 5px;
     line-height: 50px;
     font-size: 30px;
@@ -239,17 +241,18 @@ outline: none;
     float: left;
 }
 
-.setFigur-active{
+.setFigur-active {
     border: 3px solid rgb(70, 70, 70);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-    width: 55px; height: 55px;
+    width: 55px;
+    height: 55px;
     margin: 2.5px;
     line-height: 55px;
     background: #fff;
     font-size: 40px;
 }
 
-hr{
+hr {
     width: 100%;
     border: none;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
